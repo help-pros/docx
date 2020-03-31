@@ -1,0 +1,318 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns2:SetTransactionContextResponse
+                xmlns:ns2="http://svcs.paypal.com/types/pt">
+            <responseEnvelope>
+                <ack>Success</ack>
+            </responseEnvelope>
+            <trackingId>trackingId6</trackingId>
+            <senderAccount>
+                <paypalAccountId>
+                    <payerId>NWBXKD6XU7RR6</payerId>
+                </paypalAccountId>
+                <partnerAccount>
+                    <accountId>senderaccountId</accountId>
+                    <email>sender@mail.com</email>
+                    <phone>402-935-2050</phone>
+                    <firstName>George</firstName>
+                    <lastName>Michael</lastName>
+                    <dateOfBirth>1980-08-13-07:00</dateOfBirth>
+                    <mailingAddress>
+                        <line1>2211 North 1st Street</line1>
+                        <line2>Address Line2</line2>
+                        <city>San Jose</city>
+                        <state>CA</state>
+                        <postalCode>95131</postalCode>
+                        <countryCode>US</countryCode>
+                    </mailingAddress>
+                    <createDate>2012-12-09T19:14:55.277-08:00</createDate>
+                    <lastGoodTransactionDate>2012-12-09T19:14:55.277-08:00
+                    </lastGoodTransactionDate>
+                    <transactionCountTotal>3</transactionCountTotal>
+                    <chargebackCountTotal>1</chargebackCountTotal>
+                    <transactionCountThreeMonths>1</transactionCountThreeMonths>
+                    <chargebackCountThreeMonths>1</chargebackCountThreeMonths>
+                </partnerAccount>
+            </senderAccount>
+            <receiverAccount>
+                <paypalAccountId>
+                    <payerId>NWBXKD6XU7RR6</payerId>
+                </paypalAccountId>
+                <partnerAccount>
+                    <accountId>senderaccountId</accountId>
+                    <email>sender@mail.com</email>
+                    <phone>402-935-2050</phone>
+                    <firstName>George</firstName>
+                    <lastName>Michael</lastName>
+                    <dateOfBirth>1980-08-13-07:00</dateOfBirth>
+                    <mailingAddress>
+                        <line1>2212 North 1st Street</line1>
+                        <line2>Address Line2</line2>
+                        <city>San Jose</city>
+                        <state>CA</state>
+                        <postalCode>95131</postalCode>
+                        <countryCode>US</countryCode>
+                    </mailingAddress>
+                    <createDate>2012-12-09T19:14:55.277-08:00</createDate>
+                    <lastGoodTransactionDate>2012-12-09T19:14:55.277-08:00
+                    </lastGoodTransactionDate>
+                    <transactionCountTotal>3</transactionCountTotal>
+                    <chargebackCountTotal>1</chargebackCountTotal>
+                    <transactionCountThreeMonths>1</transactionCountThreeMonths>
+                    <chargebackCountThreeMonths>1</chargebackCountThreeMonths>
+                </partnerAccount>
+            </receiverAccount>
+            <subOrders>
+                <subOrder>
+                    <lineItems>
+                        <lineItem>
+                            <retailLineItem>
+                                <commonLineItem>
+                                    <identifier>1</identifier>
+                                    <itemPrice>0.99</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>itemName</name>
+                                    <description>description of the item</description>
+                                    <category>furniture</category>
+                                    <subCategory>sub of furniture</subCategory>
+                                </commonLineItem>
+                            </retailLineItem>
+                        </lineItem>
+                        <lineItem>
+                            <telcoLineItem>
+                                <commonLineItem>
+                                    <identifier>1</identifier>
+                                    <itemPrice>1.00</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>charge</name>
+                                    <description>charge 50 USD</description>
+                                    <category>Telco</category>
+                                    <subCategory>charge</subCategory>
+                                </commonLineItem>
+                                <phoneNumber>402-935-2050</phoneNumber>
+                                <origin>RESELLER</origin>
+                                <resellerID>resellerID</resellerID>
+                            </telcoLineItem>
+                        </lineItem>
+                        <lineItem>
+                            <ticketingLineItem>
+                                <commonLineItem>
+                                    <identifier>1</identifier>
+                                    <itemPrice>0.99</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>Super Bowl</name>
+                                    <description>ticet for Super Bowl</description>
+                                    <category>ticket</category>
+                                    <subCategory>sports</subCategory>
+                                </commonLineItem>
+                                <startDate>2012-12-09T19:14:55.277-08:00</startDate>
+                                <address>
+                                    <line1>Mercedes Benz Superdome</line1>
+                                    <line2>1500 Sugar Bowl Dr</line2>
+                                    <city>New Orleans</city>
+                                    <state>LA</state>
+                                    <postalCode>70112</postalCode>
+                                    <countryCode>US</countryCode>
+                                </address>
+                                <type>SPORTS</type>
+                                <attendees>
+                                    <partnerAccount>
+                                        <accountId>attendeeAccountId</accountId>
+                                        <email>attendee@mail.com</email>
+                                        <phone>402-935-2050</phone>
+                                        <firstName>George</firstName>
+                                        <lastName>Michael</lastName>
+                                        <dateOfBirth>1980-08-13-07:00</dateOfBirth>
+                                        <mailingAddress>
+                                            <line1>2221 North 1st Street</line1>
+                                            <line2>Address Line2</line2>
+                                            <city>San Jose</city>
+                                            <state>CA</state>
+                                            <postalCode>95131</postalCode>
+                                            <countryCode>US</countryCode>
+                                        </mailingAddress>
+                                        <createDate>2012-12-09T19:14:55.277-08:00</createDate>
+                                        <lastGoodTransactionDate>2012-12-09T19:14:55.277-08:00
+                                        </lastGoodTransactionDate>
+                                        <transactionCountTotal>3</transactionCountTotal>
+                                        <chargebackCountTotal>1</chargebackCountTotal>
+                                        <transactionCountThreeMonths>1</transactionCountThreeMonths>
+                                        <chargebackCountThreeMonths>1</chargebackCountThreeMonths>
+                                    </partnerAccount>
+                                    <partnerAccount>
+                                        <accountId>attendeeAccountId2</accountId>
+                                        <email>attendee@mail.com</email>
+                                        <phone>402-935-2050</phone>
+                                        <firstName>George</firstName>
+                                        <lastName>Michael</lastName>
+                                        <dateOfBirth>1980-12-07-08:00</dateOfBirth>
+                                        <mailingAddress>
+                                            <line1>2222 North 1st Street</line1>
+                                            <line2>Address Line2</line2>
+                                            <city>San Jose</city>
+                                            <state>CA</state>
+                                            <postalCode>95131</postalCode>
+                                            <countryCode>US</countryCode>
+                                        </mailingAddress>
+                                        <createDate>2012-12-09T19:14:55.277-08:00</createDate>
+                                        <lastGoodTransactionDate>2012-12-09T19:14:55.277-08:00
+                                        </lastGoodTransactionDate>
+                                        <transactionCountTotal>3</transactionCountTotal>
+                                        <chargebackCountTotal>1</chargebackCountTotal>
+                                        <transactionCountThreeMonths>1</transactionCountThreeMonths>
+                                        <chargebackCountThreeMonths>1</chargebackCountThreeMonths>
+                                    </partnerAccount>
+                                </attendees>
+                                <subscription>false</subscription>
+                            </ticketingLineItem>
+                        </lineItem>
+                    </lineItems>
+                    <shippingInfo>
+                        <firstName>George</firstName>
+                        <lastName>Michael</lastName>
+                        <address>
+                            <line1>2213 North 1st Street</line1>
+                            <line2>Address Line2</line2>
+                            <city>San Jose</city>
+                            <state>CA</state>
+                            <postalCode>95131</postalCode>
+                            <countryCode>US</countryCode>
+                        </address>
+                        <createdAt>2012-12-09T19:14:55.277-08:00</createdAt>
+                        <newAddress>true</newAddress>
+                        <previousChargeback>false</previousChargeback>
+                    </shippingInfo>
+                    <delivery>SAME_DAY</delivery>
+                </subOrder>
+                <subOrder>
+                    <lineItems>
+                        <lineItem>
+                            <dgLineItem>
+                                <commonLineItem>
+                                    <identifier>1</identifier>
+                                    <itemPrice>0.99</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>Love Story</name>
+                                    <description>classic love movie</description>
+                                    <category>movie</category>
+                                    <subCategory>love</subCategory>
+                                </commonLineItem>
+                                <type>VIDEO</type>
+                                <targetAudienceMinAge>13</targetAudienceMinAge>
+                                <targetAudienceMaxAge>80</targetAudienceMaxAge>
+                                <licenseType>PURCHASE</licenseType>
+                            </dgLineItem>
+                        </lineItem>
+                        <lineItem>
+                            <travelLineItem>
+                                <commonLineItem>
+                                    <identifier>2</identifier>
+                                    <itemPrice>9.99</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>Air Ticket</name>
+                                    <description>One Way Air Ticket</description>
+                                    <category>Ticket</category>
+                                    <subCategory>air</subCategory>
+                                </commonLineItem>
+                                <type>AIR</type>
+                                <origin>SJC</origin>
+                                <destination>LAX</destination>
+                                <departureDate>2013-05-20T18:45:00.000-07:00</departureDate>
+                                <operator>American</operator>
+                                <tripIdentifier>2618</tripIdentifier>
+                                <travelClass>ECONOMY</travelClass>
+                                <passengers>
+                                    <partnerAccount>
+                                        <accountId>passengerAccountId</accountId>
+                                        <email>passenger@mail.com</email>
+                                        <phone>402-935-2050</phone>
+                                        <firstName>George</firstName>
+                                        <lastName>Michael</lastName>
+                                        <dateOfBirth>1980-08-13-07:00</dateOfBirth>
+                                        <mailingAddress>
+                                            <line1>2311 North 1st Street</line1>
+                                            <line2>Address Line2</line2>
+                                            <city>San Jose</city>
+                                            <state>CA</state>
+                                            <postalCode>95131</postalCode>
+                                            <countryCode>US</countryCode>
+                                        </mailingAddress>
+                                        <createDate>2012-12-09T19:14:55.277-08:00</createDate>
+                                        <lastGoodTransactionDate>2012-12-09T19:14:55.277-08:00
+                                        </lastGoodTransactionDate>
+                                        <transactionCountTotal>3</transactionCountTotal>
+                                        <chargebackCountTotal>1</chargebackCountTotal>
+                                        <transactionCountThreeMonths>1</transactionCountThreeMonths>
+                                        <chargebackCountThreeMonths>1</chargebackCountThreeMonths>
+                                    </partnerAccount>
+                                </passengers>
+                                <reason>LEISURE</reason>
+                                <bookingType>INDIVIDUAL</bookingType>
+                            </travelLineItem>
+                        </lineItem>
+                        <lineItem>
+                            <hospitalityLineItem>
+                                <commonLineItem>
+                                    <identifier>3</identifier>
+                                    <itemPrice>499.00</itemPrice>
+                                    <currencyCode>USD</currencyCode>
+                                    <itemCount>1</itemCount>
+                                    <name>Four Seasons Hotel</name>
+                                    <description>Superior Room with one king bed</description>
+                                    <category>Hotel</category>
+                                    <subCategory>Star Hotel</subCategory>
+                                </commonLineItem>
+                                <arrivalDate>2013-05-20-07:00</arrivalDate>
+                                <departureDate>2013-05-21-07:00</departureDate>
+                                <numberOfAdults>2</numberOfAdults>
+                                <numberOfChildren>0</numberOfChildren>
+                                <facilityRating>5</facilityRating>
+                                <roomCapacity>2</roomCapacity>
+                            </hospitalityLineItem>
+                        </lineItem>
+                    </lineItems>
+                    <delivery>STREAMING</delivery>
+                </subOrder>
+            </subOrders>
+            <device>
+                <lastSeenIpAddress>
+                    <ipAddress>74.125.129.99</ipAddress>
+                    <firstSeen>2012-12-09T19:14:55.277-08:00</firstSeen>
+                    <lastSeen>2012-12-09T19:14:55.277-08:00</lastSeen>
+                    <seenCount>1</seenCount>
+                </lastSeenIpAddress>
+                <id>deviceid</id>
+                <type>MOBILE_NATIVE</type>
+                <operatingSystem>Android</operatingSystem>
+                <userAgent>Mozilla/5.0 (Linux; U; Android 2.2; zh-cn; Desire_A8181
+                    Build/FRF91)
+                </userAgent>
+                <firstSeen>2012-12-09T19:14:55.277-08:00</firstSeen>
+                <lastSeen>2012-12-09T19:14:55.277-08:00</lastSeen>
+                <seenCount>1</seenCount>
+            </device>
+            <ipAddress>
+                <ipAddress>173.0.84.34</ipAddress>
+                <firstSeen>2012-12-09T19:14:55.277-08:00</firstSeen>
+                <lastSeen>2012-12-09T19:14:55.277-08:00</lastSeen>
+                <seenCount>1</seenCount>
+            </ipAddress>
+            <additionalData>
+                <pair>
+                    <key>test1</key>
+                    <value/>
+                </pair>
+                <pair>
+                    <key>test2</key>
+                    <value>aaa</value>
+                </pair>
+            </additionalData>
+        </ns2:SetTransactionContextResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

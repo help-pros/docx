@@ -1,0 +1,15 @@
+1. 生成不含密码保护的私钥：
+genrsa -out private-rsa.key 1024
+
+2. 生成证书
+req -new -x509 -key private-rsa.key -days 750 -out public-rsa.cer
+
+
+3. 生成Keystore
+3.1. 生成PKCS12 格式Keystore
+pkcs12 -export -name test-alias -in public-rsa.cer -inkey private-rsa.key -out 99bill-rsa.pfx
+
+
+
+pfx格式证书转换为pem格式命令
+pkcs12 -in 99bill-rsa.pfx -passin pass:生成证书设置的密码 -nodes -out 99bill-rsa.pem

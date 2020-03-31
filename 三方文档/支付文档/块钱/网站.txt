@@ -1,0 +1,59 @@
+http://open.99bill.com/open/rmbQueryOrder/index.jhtml
+
+输入keystore密码：
+
+再次输入新密码:
+
+您的名字与姓氏是什么？
+
+  [Unknown]：  *.gmw.cn
+
+您的组织单位名称是什么？
+
+  [Unknown]：  Technology Dept
+
+您的组织名称是什么？
+
+  [Unknown]：  Guang Ming Wang Culture Media Co., Ltd.
+
+您所在的城市或区域名称是什么？
+
+  [Unknown]：  Beijing
+
+您所在的州或省份名称是什么？
+
+  [Unknown]：  Beijing
+
+该单位的两字母国家代码是什么
+
+  [Unknown]：  CN
+
+CN=www.gmw.cn, OU=Technology Dept, O="Guang Ming Wang Culture Media Co., Ltd.",
+
+L=Beijing, ST=Beijing, C=CN 正确吗？
+
+  [否]：  y
+
+
+
+
+输入<mykey>的主密码
+
+        （如果和 keystore 密码相同，按回车）：gmw20140210
+
+
+C:\Users\Administrator>keytool -certreq -keystore c:\gmw.cn.jks -file c:\gmw.cn.
+
+csr
+
+输入keystore密码：gm
+周杰(周杰) 03-11 16:58:11
+w20140210
+
+
+
+skype_gmw@163.com
+赵龙杰(赵龙杰) 03-11 16:47:11
+还需要密码.需要上传公钥
+任胜男(任胜男) 03-11 16:48:47
+skypegmf2013

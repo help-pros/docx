@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--scan为true：配置文档改变，将会被重新加载，默认为true scanPeriod:设置监测配置文档是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。
+                 当scan为true时，此属性生效。默认的时间间隔为1分钟。-->
+<configuration scan="true" scanPeriod="10 seconds">
+    <!--环境区分-->
+    <!-- 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR -->
+    <springProfile name="dev">
+        <property name="LOG_HOME" value="/mnt/log/dev/products"></property>
+    </springProfile>
+    <springProfile name="test">
+        <property name="LOG_HOME" value="/mnt/log/test/products"></property>
+    </springProfile>
+    <springProfile name="prod">
+        <property name="LOG_HOME" value="/mnt/log/prod/products"></property>
+    </springProfile>
+    <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+    <!-- %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n -->
+    <property name="pattern" value="%d %p %C{1.} [%t] %m%n"></property>
+    <!--日志文件保留天数 -->
+    <property name="maxHistory" value="90"></property>
+    <!-- 控制台输出 -->
+    <appender name="CONSOLELOG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${pattern}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件(info) -->
+    <appender name="FILEINFOLOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <!-- 滚动策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_HOME}/info/info.%d.log</FileNamePattern>
+            <!--日志文件保留天数 -->
+            <MaxHistory>${maxHistory}</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+
+        <!--日志文件最大的大小 -->
+        <!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize> </triggeringPolicy> -->
+    </appender>
+
+    <!-- 按照每天生成日志文件(error) -->
+    <appender name="FILEERRORLOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch> <!-- 如果没有命中就使用这条规则 -->
+            <onMismatch>DENY</onMismatch><!-- 如果命中就禁止这条日志 -->
+        </filter>
+        <!-- 滚动策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_HOME}/error/error.%d.log</FileNamePattern>
+            <!--日志文件保留天数 -->
+            <MaxHistory>${maxHistory}</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${pattern}</pattern>
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 日志输出级别 -->
+    <!-- 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLELOG"/>
+        <appender-ref ref="FILEINFOLOG"/>
+        <appender-ref ref="FILEERRORLOG"/>
+    </root>
+
+    <!-- <logger name="org.springframework" level="WARN" />
+    mybatis日志打印
+    <logger name="com.ibatis" level="DEBUG" />
+    <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />
+    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" />
+    <logger name="java.sql.Connection" level="DEBUG" />
+    <logger name="java.sql.Statement" level="DEBUG" />
+    <logger name="java.sql.PreparedStatement" level="DEBUG" />
+    <logger name="com.xuexin.xcloud.print.service.mapper" level="DEBUG"></logger>
+ -->
+    <!-- 敏感词类的日志保存 -->
+    <appender name="CHECKPARAMSLOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/checkparams/checkparams.%d.log
+            </FileNamePattern>
+            <MaxHistory>${maxHistory}</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+    <logger name="CHECKPARAMS" level="INFO">
+        <appender-ref ref="CHECKPARAMSLOG"/>
+    </logger>
+
+</configuration>

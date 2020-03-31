@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="RMBPORT"
+  id="myeclipse.1319445562743"
+  context-root="/RMBPORT"
+  j2ee-spec="5.0"
+  archive="RMBPORT.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

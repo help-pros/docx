@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>baifubao</display-name><!--站点名称-->
+  <description>百度钱包钱包</description>
+  
+  
+  
+  <context-param><!--环境参数,设置常量,取得常量  this.getInitParameter("context");-->
+    <!-- 商户号 -->
+    <param-name>SP_NO</param-name> 
+    <param-value>3400000001</param-value>
+  </context-param>
+
+  
+  <context-param>
+     <!-- 百度钱包即时到账支付接口URL（不需要用户登录百度钱包）-->
+    <param-name>BFB_PAY_DIRECT_NO_LOGIN_URL </param-name> 
+    <param-value>https://wallet.baidu.com/api/0/pay/0/direct</param-value>
+  </context-param> 
+  
+  <context-param>
+     <!-- 百度钱包即时到账支付接口URL（需要用户登录百度钱包）-->
+    <param-name>BFB_PAY_DIRECT_LOGIN_URL </param-name> 
+    <param-value>https://wallet.baidu.com/api/0/pay/0/direct/0</param-value>              
+  </context-param> 
+  <!-- https://10.48.57.22:8543/api/0/pay/0/direct/0 -->
+   <context-param>
+     <!-- 百度钱包移动端即时到账支付接口URL（需要用户登录百度钱包，不支付银行网关支付）  -->
+    <param-name>BFB_PAY_WAP_DIRECT_URL </param-name> 
+    <param-value>https://www.baifubao.com/api/0/pay/0/wapdirect/0</param-value>
+  </context-param> 
+  
+   <context-param>
+     <!--  百度钱包订单号查询支付结果接口URL    -->
+    <param-name>BFB_QUERY_ORDER_URL </param-name> 
+    <param-value> https://wallet.baidu.com/api/0/query/0/pay_result_by_order_no</param-value>
+  </context-param> 
+  <!--  https://www.baifubao.com/api/0/query/0/pay_result_by_order_no-->
+  
+  <context-param>
+     <!-- 百度钱包接口字符编码-->
+    <param-name>BFB_INTERFACE_ENCODING </param-name> 
+    <param-value>1</param-value>
+  </context-param> 
+  
+   <context-param>
+     <!-- 签名校验算法md5-->
+    <param-name>SIGN_METHOD_MD5 </param-name> 
+    <param-value>1</param-value>
+  </context-param> 
+  
+   <context-param>
+     <!-- 签名校验算法hash-->
+    <param-name>IGN_METHOD_SHA1 </param-name> 
+    <param-value>2</param-value>
+  </context-param> 
+  
+    <context-param>
+     <!-- 百度钱包即时到账接口服务ID-->
+    <param-name>BFB_PAY_INTERFACE_SERVICE_ID </param-name> 
+    <param-value>1</param-value>
+  </context-param> 
+
+  <context-param>
+     <!-- 百度钱包查询接口服务ID-->
+    <param-name>BFB_QUERY_INTERFA </param-name> 
+    <param-value>11</param-value>
+  </context-param> 
+
+<context-param>
+     <!-- 百度钱包接口版本-->
+    <param-name>BFB_INTERFACE_VERSION </param-name> 
+    <param-value>2</param-value>
+  </context-param> 
+  
+  <context-param>
+     <!-- 百度钱包接口返回格式：XML-->
+    <param-name>BFB_INTERFACE_OUTPUT_FORMAT </param-name> 
+    <param-value>1</param-value>
+  </context-param> 
+  
+    <context-param>
+     <!-- 百度钱包查询接口服务ID-->
+    <param-name>BFB_QUERY_INTERFACE_SERVICE_ID </param-name> 
+    <param-value>11</param-value>
+  </context-param>
+
+  
+    <context-param>
+     <!-- 百度钱包接口货币单位：人民币-->
+    <param-name>BFB_INTERFACE_CURRENTCY </param-name> 
+    <param-value>1</param-value>
+  </context-param>
+
+    
+  <context-param>
+    <!-- 商户订单支付成功 -->
+    <param-name>SP_PAY_RESULT_SUCCESS </param-name>
+    <param-value>1</param-value>
+  </context-param>
+ 
+ <context-param>
+    <!-- 商户订单等待支付 -->
+    <param-name>SP_PAY_RESULT_WAITING </param-name>
+    <param-value>2</param-value>
+   </context-param>
+  
+  <servlet>  
+    <servlet-name>PayUnloginServlet</servlet-name>    
+    <servlet-class>serverlet.PayUnloginServlet</servlet-class> 
+  </servlet> 
+  <servlet-mapping>    
+     <servlet-name>PayUnloginServlet</servlet-name>   
+     <url-pattern>/PayUnloginServlet</url-pattern> 
+ </servlet-mapping>
+ 
+  <servlet>  
+    <servlet-name>PayNeedLoginServlet</servlet-name>    
+    <servlet-class>serverlet.PayNeedLoginServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>    
+     <servlet-name>PayNeedLoginServlet</servlet-name>   
+     <url-pattern>/PayNeedLoginServlet</url-pattern> 
+ </servlet-mapping>
+ 
+  <servlet>  
+    <servlet-name>PayWapServlet</servlet-name>    
+    <servlet-class>serverlet.PayWapServlet</servlet-class> 
+  </servlet>
+  
+  <servlet-mapping>    
+     <servlet-name>PayWapServlet</servlet-name>   
+     <url-pattern>/PayWapServlet</url-pattern> 
+ </servlet-mapping>
+ 
+  <servlet>  
+    <servlet-name>PayQueryOrderByNoServlet</servlet-name>    
+    <servlet-class>serverlet.PayQueryOrderByNoServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>    
+     <servlet-name>PayQueryOrderByNoServlet</servlet-name>   
+     <url-pattern>/PayQueryOrderByNoServlet</url-pattern> 
+ </servlet-mapping>
+
+ <servlet>  
+    <servlet-name>ReturnServlet</servlet-name>    
+    <servlet-class>serverlet.ReturnServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReturnServlet</servlet-name>
+    <url-pattern>/ReturnServlet</url-pattern>
+  </servlet-mapping>
+ 
+ <session-config>
+<session-timeout>60</session-timeout>
+</session-config>
+ 
+ 
+ </web-app>
